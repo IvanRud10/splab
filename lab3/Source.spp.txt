@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+extern "C" double calc();
+extern "C" void print_res(int RES);
+extern "C"
+{
+	float B;
+	double A, C1, E, D;
+	//long double D;  lf
+	//double K1 = 1164533775;
+};
+
+void main()
+{
+	printf("Enter numbers:\n");
+	printf("A = "); scanf_s("%lf", &A);
+	printf("B = "); scanf_s("%f", &B);
+	printf("C = "); scanf_s("%lf", &C1);
+	printf("D = "); scanf_s("%lf", &D);
+	printf("E = "); scanf_s("%lf", &E);
+	// if (E == 0) {
+	//	printf("ERROR! Division by zero \n");
+	//}
+	printf("Result is X= %lf \n", A + (B * C1) - (D / E) + 1164533775);
+	printf("Result is ASM= %f \n", calc());
+}
+
