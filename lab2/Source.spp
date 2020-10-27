@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+// для того, щоб в програмі доступатися до С функцій і даних з асемблерного модуля
+// вони мають бути оголошені як такі, що звязані по правилам мови С за допомогою
+// extern "C"
+
+extern "C" int  calc(short C, int A, long D);
+
+extern "C"
+{
+
+};
+
+void main(void)
+{
+	int nRes, nNumber2, nNumber3, nNumber4;
+
+	 printf("C = "); scanf_s("%x", &nNumber2);
+	 printf("A = "); scanf_s("%x", &nNumber3);
+	 printf("D = "); scanf_s("%x", &nNumber4);
+	 nRes = calc(nNumber2, nNumber3, nNumber4);
+
+	printf("Result is: %x", nRes);
+}
+
