@@ -1,12 +1,11 @@
 .586
 .model flat, c
 
-EXTRN A:QWORD, B:DWORD, C1:QWORD, D:QWORD, E:QWORD
 PUBLIC calc
 
 .data
  K  dq  1164533775.0
- ;K  dq  4569600Fh
+;K  dq  4569600Fh
 
 .code 
 calc PROC
@@ -14,12 +13,12 @@ push ebp
 mov ebp,esp
 
  finit
- fld B
- fmul C1
- fadd A
+ fld dword ptr [ebp+16]
+ fmul qword ptr [ebp+20]
+ fadd qword ptr [ebp+8]
  fadd K
- fld D
- fdiv E
+ fld qword ptr [ebp+28]
+ fdiv qword ptr [ebp+36]
  fsub
 
 
