@@ -4,8 +4,7 @@
 PUBLIC calc
 
 .data
- K  dq  1164533775.0
-;K  dq  4569600Fh
+ K  dq  1164533775.0   ;4569600Fh
 
 .code 
 calc PROC
